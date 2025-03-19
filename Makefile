@@ -242,6 +242,7 @@ $(foreach png, $(unown_pngs),\
 gfx/pokemon/unown_%/back.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
 gfx/pokemon/unown_%/front.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
 gfx/pokemon/unown/normal.gbcpal: $(subst .png,.gbcpal,$(unown_pngs))
+	mkdir -p $(@D)
 	tools/gbcpal $(tools/gbcpal) $@ $^
 
 
